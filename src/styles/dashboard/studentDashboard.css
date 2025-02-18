@@ -1,10 +1,22 @@
+/* Importing a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .dashboard-container {
-  max-width: 1200px;
+  width: 70%;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #f0f7e6;
+  background: linear-gradient(135deg, #f0f7e6, #e6f5e0);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.dashboard-container:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 .queue-list {
@@ -17,19 +29,32 @@
   border-collapse: collapse;
 }
 
-.queue-table th, .queue-table td {
+.queue-table th,
+.queue-table td {
   padding: 1rem;
   border: 1px solid #ccc;
   text-align: left;
+  transition: background-color 0.3s ease;
 }
 
 .queue-table th {
   background-color: #4a9e2f;
   color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+/* New rule: Override flex behavior for table rows with .queue-item class */
+.queue-table tr.queue-item {
+  display: table-row;
 }
 
 .queue-table tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+.queue-table tr:hover td {
+  background-color: rgba(74, 158, 47, 0.1);
 }
 
 .queue-item {
@@ -42,6 +67,12 @@
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   color: black;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.queue-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .queue-item.accepted {
@@ -58,13 +89,15 @@
   margin-top: 2rem;
 }
 
-.join-button, .leave-button {
+.join-button,
+.leave-button {
   padding: 0.75rem 2rem;
   font-size: 1.1rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 .join-button {
@@ -72,9 +105,19 @@
   color: white;
 }
 
+.join-button:hover {
+  background-color: #3d8831;
+  transform: translateY(-2px);
+}
+
 .leave-button {
   background-color: #dc3545;
   color: white;
+}
+
+.leave-button:hover {
+  background-color: #c12a3d;
+  transform: translateY(-2px);
 }
 
 .response-message {
@@ -82,6 +125,7 @@
   margin: 1rem 0;
   border-radius: 4px;
   text-align: center;
+  animation: fadeIn 0.5s ease;
 }
 
 .response-message.success {
@@ -94,4 +138,13 @@
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

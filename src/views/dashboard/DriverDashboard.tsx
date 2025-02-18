@@ -44,7 +44,8 @@ const DriverDashboard = () => {
     try {
       setLoading(true);
       const socket = socketService.getSocket();
-      socket.emit('queue_leave', { id, status: 'accepted' });
+      console.log('Accepting student:', id);
+      socket.emit('queue_leave', { email: id, status: 'accepted' });
     } catch (error) {
       console.error('Failed to accept student:', error);
     } finally {
@@ -56,7 +57,8 @@ const DriverDashboard = () => {
     try {
       setLoading(true);
       const socket = socketService.getSocket();
-      socket.emit('queue_cancel', { id, status: 'rejected' });
+      console.log('Rejecting student:', id);
+      socket.emit('queue_cancel', { email: id, status: 'rejected' });
     } catch (error) {
       console.error('Failed to reject student:', error);
     } finally {
