@@ -1,0 +1,160 @@
+.dashboard-container {
+  width: 70%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f0f7e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove or comment out this conflicting style */
+/*.queue-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}*/
+
+.queue-list {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.queue-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto; /* Allow table to adjust column widths */
+  margin: 1rem 0;
+}
+
+
+.queue-table th, .queue-table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Column width definitions */
+.col-position {
+  width: 80px; /* Fixed width for position */
+}
+
+.col-name {
+  width: 30%;
+}
+
+.col-time {
+  width: 150px; /* Fixed width for timestamp */
+}
+
+.col-status {
+  width: 100px; /* Fixed width for status */
+}
+
+.col-actions {
+  width: 100px; /* Fixed width for actions */
+}
+
+.queue-table th {
+  background-color: #4a9e2f;
+  color: white;
+}
+
+.queue-table tr {
+  background-color: white;
+}
+
+.queue-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.accept-button, .reject-button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accept-button {
+  background-color: #4a9e2f;
+  color: white;
+}
+
+.reject-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.student-name {
+  font-weight: bold;
+}
+
+.timestamp {
+  color: #666;
+}
+
+.response-message {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.response-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.response-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Status styling */
+.queue-item.waiting .status {
+  color: #856404;
+  background-color: #fff3cd;
+}
+
+.queue-item.accepted .status {
+  color: #155724;
+  background-color: #d4edda;
+}
+
+.queue-item.rejected .status {
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+/* Add specific row styling */
+.queue-item.waiting {
+  background-color: #fff3cd;
+}
+
+.queue-item.accepted {
+  background-color: #d4edda;
+}
+
+.queue-item.rejected {
+  background-color: #f8d7da;
+}
