@@ -3,7 +3,7 @@ import Login from './views/auth/Login';
 import Signup from './views/auth/Signup';
 import StudentDashboard from './views/dashboard/StudentDashboard';
 import DriverDashboard from './views/dashboard/DriverDashboard';
-import { JSX, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const token = localStorage.getItem('token');
