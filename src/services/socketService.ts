@@ -3,7 +3,7 @@ import { logger } from './logger';
 
 class SocketService {
   private socket: Socket | null = null;
-  private readonly API_URL = 'http://localhost:3000';
+  private readonly API_URL = 'https://automate-brq0.onrender.com';
 
   connect() {
     if (!this.socket) {
